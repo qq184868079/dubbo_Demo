@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+
+    <!--扫描包上的注解,来暴露接口-->
+    <dubbo:annotation package="cn.qingfeng.controller"/>
+    <!--连接服务 注册中心-->
+    <dubbo:registry address="zookeeper://192.168.37.128:2181"/>
+
+    <!--给应用起名-->
+    <dubbo:application name="dubbodemo_consumer"/>
+</beans>
